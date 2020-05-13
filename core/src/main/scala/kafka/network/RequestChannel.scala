@@ -211,6 +211,9 @@ object RequestChannel extends Logging {
         buffer = null
       }
     }
+    def readOnlyBuffer():ByteBuffer ={
+      buffer
+    }
 
     override def toString = s"Request(processor=$processor, " +
       s"connectionId=${context.connectionId}, " +

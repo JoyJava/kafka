@@ -695,7 +695,7 @@ private[kafka] class Processor(val id: Int,
             val context = new RequestContext(header, connectionId, channel.socketAddress,
               channel.principal, listenerName, securityProtocol)
             val req = new RequestChannel.Request(processor = id, context = context,
-              startTimeNanos = time.nanoseconds, memoryPool, receive.payload, requestChannel.metrics)
+              startTimeNanos = time.nanoseconds, memoryPool, receive.payload, requestChannel.metrics)//fhtodo 000 request create
             requestChannel.sendRequest(req)
             selector.mute(connectionId)
             handleChannelMuteEvent(connectionId, ChannelMuteEvent.REQUEST_RECEIVED)
